@@ -18,23 +18,27 @@ const MoviesBuilder: any = (props:any) => {
 
     if (error) return "An error has occurred: " + error.message;
     
-    const printHandler = () => (
+    
+    const moviesHandle = () => (
         data.map((el: any) => (
-            <div key={el.id} className='img-header'>
-                <img src={IMG_API + el.poster_path} alt={el.title} />
-            <div className="img-info">
-                <h3>{el.title}</h3>
-                <span>{el.vote_average}</span>
-            </div>
+            <div key={el.id} className='group relative bg-indigo-900 m-1 p-4 overflow-hidden w-1/6'>
+                <img className='max-w-full' src={IMG_API + el.poster_path} alt={el.title} />
+                <div className="flex p-4 items-center justify-between">
+                    <h3 className='m-0 text-orange-500 font-semibold'>{el.title}</h3>
+                    <span>Vote Average:{el.vote_average}</span>
+                </div>
+                <div className='absolute bg-white 
+                    text-indigo-900 p-4 translate-x-full transition-transform duration-300 ease-out bottom-0 left-0 right-0 group-hover:translate-x-0'>
+                    <h3>Overview:</h3>
+                    <p>{el.overview}</p>
+                </div>
             </div>
 
         ))
     )
     return(
-        <div className='movie-container'>
-            <div className='movie'>
-           {printHandler()}
-           </div>
+        <div className='flex flex-wrap'>
+           {moviesHandle()}
         </div>
         
     );
