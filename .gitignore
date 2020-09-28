@@ -24,3 +24,10 @@ yarn-error.log*
 
 #keys
 /src/keys*
+
+#css
+src/tailwind*
+
+#firebase
+.firebase*
+firebase*

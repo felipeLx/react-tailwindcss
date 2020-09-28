@@ -4,31 +4,31 @@
 
 @tailwind utilities;
 
-.videos{
-    position: relative;
-    background-color: indigo;
-    margin: 1rem;
-    padding: 1.5rem;
-    width: 300px;
-}
+@layer utilities {
+    .videos{
+        position: relative;
+        background-color: indigo;
+        margin: 1rem;
+        padding: 1.5rem;
+        width: 300px;
+    }
 
-/* videos-over absolute bg-white text-indigo-900 p-4 translate-x-full 
-transition-transform duration-300 ease-out bottom-0 left-0 right-0 */
-.videos-over{
-    opacity: 0;
-    position: absolute;
-    background-color: white;
-    color: indigo;
-    transform: translateY(100%);
-    transition: transform 0.3s ease-in-out;
-    overflow: auto;
-    max-height: 100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
+    .videos-over{
+        opacity: 0;
+        position: absolute;
+        background-color: white;
+        color: indigo;
+        transform: translateY(100%);
+        transition: transform 0.3s ease-in-out;
+        overflow: auto;
+        max-height: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
 
-.videos:hover .videos-over {
-    transform: translateY(0);
-    opacity: 100%;
+    .videos:hover .videos-over {
+        transform: translateY(0);
+        opacity: 100%;
+    }
 }
